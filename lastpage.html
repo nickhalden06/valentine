@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="css/flower.css" />
+  </head>
+  <body>
+    <div id="thankyou"><b>hehe thank you, you're my girlfriend now</b></div>
+    <audio controls autoplay loop>
+      <source src="congratulations.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div class="row-container">
+      <img src="happy-cat.gif" alt="happy cat" class="side-image" />
+      <img src="kiss.gif" alt="kiss" class="side-image" />
+    </div>
+
+    <script>
+      // Create falling petals
+      function createPetal() {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        
+        // Random start position
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = Math.random() * 3 + 5 + 's'; // 5-8s
+        
+        document.body.appendChild(petal);
+    
+        // Remove petal after animation
+        setTimeout(() => petal.remove(), 8000);
+      }
+    
+      // Generate petals every 300ms
+      setInterval(createPetal, 300);
+    </script>
+  </body>
+</html>
